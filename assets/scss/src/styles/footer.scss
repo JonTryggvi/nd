@@ -1,0 +1,66 @@
+.footer-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+  border-top: 1px solid $black;
+  @include breakpoint(small down) {
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top: 15px;
+  }
+  .copy {
+    width: 30%;
+    @include breakpoint(small down) {
+      order:3;
+    }
+    p {
+      @include font(footer);
+      margin: 0;
+      a {
+        @extend p;
+      }
+    }
+
+  }
+  .info{
+    width: 30%;
+    display: flex;
+    flex-shrink: 1;
+    justify-content: center;
+    a {
+      @include font(footer);
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  .social-container {
+   width: 30%;
+  display: flex;
+  justify-content: flex-end;
+    .social {
+      display: flex;
+      justify-content: space-between;
+      width: 55%;
+
+      a {
+        font-size: 34px;
+        color: $black;
+        transition: color 300ms ease-in-out;
+        &:hover{
+          color: tomato;
+        }
+      }
+    }
+  }
+  .copy, .info, .social-container {
+    @include breakpoint(small down) {
+      width: 98vw;
+      display: flex;
+      justify-content: center;
+      margin: 0 0 10px;
+    }
+  }
+}
